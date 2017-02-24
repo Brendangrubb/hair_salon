@@ -18,6 +18,7 @@ The user will be able to add, list, edit and delete entries for stylists. The us
 | Program will find a specific stylist from the database | _user clicks_ "Jacques St Gerrard" | "Stylist: Jacques St Gerrard / 5559991234 / (works on) Monday, Saturday" |
 | Program will edit entry of specific stylist from the database | _user inputs new phone number_ "4321999555" | "Stylist: Jacques St Gerrard / 4321999555 / (works on) Monday, Saturday |
 | Program will delete entry of specific stylist from the database | _user clicks delete stylist_ | "Stylist has been deleted" |
+| Program will find list of clients assigned to a single Stylist | "Jacques St Gerrard" | "Vince Neil" |
 
 ### Client Functionality
 |Behavior|Input|Output|
