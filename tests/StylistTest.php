@@ -6,6 +6,7 @@
     */
 
     require_once __DIR__.'/../src/Stylist.php';
+    require_once __DIR__.'/../src/Client.php';
 
     $server = 'mysql:host=localhost:8889;dbname=hair_salon_test';
     $username = 'root';
@@ -19,6 +20,7 @@
         protected function tearDown()
         {
             Stylist::deleteAllStylists();
+            Client::deleteAllClients();
         }
     // GETTERS AND SETTERS TESTS
 
@@ -231,9 +233,42 @@
 
             $new_stylist->deleteStylist();
 
-            $this->assertEquals([$new_stylist2], Stylist::getAllStylists());   
+            $this->assertEquals([$new_stylist2], Stylist::getAllStylists());
         }
 
+        function test_getClients()
+        {
+            $id = null;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '5559991234';
+            $workdays= 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+            $new_stylist->saveStylist();
+            $new_stylist_id = $new_stylist->getId();
 
+            $id2 = null;
+            $name2 = 'Cristiano Francois';
+            $phone_number2 = '5038765309';
+            $workdays2 = 'Thursday, Friday';
+            $new_stylist2 = new Stylist($id2, $name2, $phone_number2, $workdays2);
+            $new_stylist2->saveStylist();
+            $new_stylist_id2 = $new_stylist2->getId();
+
+            $id = null;
+            $name = 'Vince Neil';
+            $phone_number = '2125436789';
+            $new_client = new Client($id, $name, $phone_number, $new_stylist_id);
+            $new_client->saveClient();
+
+            $id2 = null;
+            $name2 = 'Crispin Glover';
+            $phone_number2 = '9876345212';
+            $new_client2 = new Client($id, $name, $phone_number, $new_stylist_id2);
+            $new_client2->saveClient();
+
+            $result = $new_stylist->getClients();
+
+            $this->assertEquals([$new_client], $result);
+        }
     }
 ?>
