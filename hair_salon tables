@@ -1,5 +1,12 @@
++--------------------+
+| Database           |
++--------------------+
+| hair_salon         |
+| hair_salon_test    |
++--------------------+
+
 TABLES FOR REFERENCE
- 
+
 STYLISTS
 +--------------+---------------------+------+-----+---------+----------------+
 | Field        | Type                | Null | Key | Default | Extra          |
