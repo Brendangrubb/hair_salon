@@ -77,7 +77,7 @@
 
         static function deleteAllStylists()
         {
-
+            $GLOBALS['DB']->exec("DELETE FROM stylists;");
         }
 
 
