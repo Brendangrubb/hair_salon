@@ -69,6 +69,10 @@
             }
         }
 
+        function deleteStylist() {
+            
+        }
+
         static function getAllStylists()
         {
             $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylists;");
