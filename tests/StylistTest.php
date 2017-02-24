@@ -16,7 +16,7 @@
     class StylistTest extends PHPUnit_Framework_TestCase
     {
 
-        function tearDown()
+        protected function tearDown()
         {
             Stylist::deleteAllStylists();
         }
@@ -137,6 +137,28 @@
             $get_all = Stylist::getAllStylists();
             $this->assertEquals([], $get_all);
         }
+
+        function test_findStylist()
+        {
+            $id = null;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '5559991234';
+            $workdays= 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+            $new_stylist->saveStylist();
+
+            $id2 = null;
+            $name2 = 'Cristiano Francois';
+            $phone_number2 = '5038765309';
+            $workdays2 = 'Thursday, Friday';
+            $new_stylist2 = new Stylist($id2, $name2, $phone_number2, $workdays2);
+            $new_stylist2->saveStylist();
+
+            $result = Stylist::findStylist($new_stylist->getId());
+
+            $this->assertEquals($new_stylist, $result);
+        }
+
 
 
     }
