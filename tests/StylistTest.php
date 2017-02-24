@@ -60,7 +60,7 @@
             $id = 1;
             $name = 'Jacques St Gerrard';
             $phone_number = '555-999-1234';
-            $$workdays= 'Monday, Saturday';
+            $workdays= 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
 
             $result = $new_stylist->getWorkdays();

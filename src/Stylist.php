@@ -34,23 +34,21 @@
         function setPhoneNumber($new_phone_number)
         {
             $this->phone_number = $new_phone_number;
-
         }
 
         function getPhoneNumber()
         {
             return $this->phone_number;
-
         }
 
         function setWorkdays($new_workdays)
         {
-
+            $this->workdays = $new_workdays;
         }
 
         function getWorkdays()
         {
-
+            return $this->workdays;
         }
 
 
