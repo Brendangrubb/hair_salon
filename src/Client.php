@@ -57,9 +57,12 @@
             $this->id = $GLOBALS['DB']->lastInsertID();
         }
 
-        function updateClient()
+        function updateClient($new_phone_number = null)
         {
-
+            if ($new_phone_number != null) {
+            $GLOBALS['DB']->exec("UPDATE clients SET phone_number = '{$new_phone_number}' WHERE id = {$this->getId()};");
+            $this->setPhoneNumber($new_phone_number);
+            }
         }
 
         static function getAllClients()
