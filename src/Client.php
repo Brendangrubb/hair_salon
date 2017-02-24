@@ -57,6 +57,11 @@
             $this->id = $GLOBALS['DB']->lastInsertID();
         }
 
+        function updateClient()
+        {
+
+        }
+
         static function getAllClients()
         {
             $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients;");

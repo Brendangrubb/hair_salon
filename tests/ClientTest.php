@@ -157,5 +157,21 @@
 
             $this->assertEquals($new_client, $result);
         }
+
+        function test_updateClient()
+        {
+            $id = null;
+            $name = 'Vince Neil';
+            $phone_number = '2125436789';
+            $stylist_id2 = 1;
+            $new_client = new Client($id, $name, $phone_number, $stylist_id);
+            $new_client->saveClient();
+
+            $new_number = '3215439876';
+
+            $new_client->updateClient($new_number);
+
+            $this->assertEquals('3215439876', $new_client->getPhoneNumber());
+        }
     }
 ?>
