@@ -44,6 +44,9 @@ The user will be able to add, list, edit and delete entries for stylists. The us
 * hair_salon_test created at http://localhost:8888/phpmyadmin;
 * USE hair_salon_test;
 * SELECT DATABASE(); (_to confirm I'm testing on the correct database_)
+* DELETE FROM stylists WHERE id BETWEEN 1 AND 50; (run regularly to clear database between tests before deleteAll method and teardown were created)
+* SELECT * FROM stylists; (run to confirm DELETE FROM command worked as expected)
+
 
 &nbsp;
 ## Setup/Installation Requirements
