@@ -25,15 +25,25 @@
             $name = 'Vince Neil';
             $phone_number = '2125436789';
             $stylist_id= 1;
-            $new_stylist = new Stylist($id, $name, $phone_number, $stylist_id);
+            $new_client = new Stylist($id, $name, $phone_number, $stylist_id);
 
-            $result = $new_stylist->getId();
-
+            $result = $new_client->getId();
 
             $this->assertEquals(1, $result);
         }
 
+        function test_getName()
+        {
+            $id = 1;
+            $name = 'Vince Neil';
+            $phone_number = '2125436789';
+            $stylist_id= 1;
+            $new_client = new Stylist($id, $name, $phone_number, $stylist_id);
 
+            $result = $new_client->getName();
+
+            $this->assertEquals('Vince Neil', $result);
+        }
 
     }
 ?>
