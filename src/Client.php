@@ -80,6 +80,10 @@
             $GLOBALS['DB']->exec("DELETE FROM clients;");
         }
 
+        static function findClient($search_id)
+        {
+
+        }
 
 
 
