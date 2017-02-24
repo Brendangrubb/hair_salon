@@ -159,7 +159,21 @@
             $this->assertEquals($new_stylist, $result);
         }
 
+        function test_updateStylist()
+        {
+            $id = null;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '5559991234';
+            $workdays= 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+            $new_stylist->saveStylist();
 
+            $new_number = '4321999555';
+
+            $new_stylist->updateStylist($new_number);
+
+            $this->assertEquals('4321999555', $new_stylist->getPhoneNumber());
+        }
 
     }
 ?>

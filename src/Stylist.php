@@ -57,6 +57,11 @@
         $this->id = $GLOBALS['DB']->lastInsertID();
         }
 
+        function updateStylist()
+        {
+
+        }
+
         static function getAllStylists()
         {
             $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylists;");
@@ -92,6 +97,11 @@
             }
             return $found_stylist;
         }
+
+
+
+
+
 
     }
 ?>
