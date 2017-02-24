@@ -57,9 +57,16 @@
         $this->id = $GLOBALS['DB']->lastInsertID();
         }
 
-        function updateStylist()
+        function updateStylist($new_phone_number = null, $new_workdays = null)
         {
-
+            if ($new_phone_number != null) {
+            $GLOBALS['DB']->exec("UPDATE stylists SET phone_number = '{$new_phone_number}' WHERE id = {$this->getId()};");
+            $this->setPhoneNumber($new_phone_number);
+            }
+            if ($new_workdays != null) {
+            $GLOBALS['DB']->exec("UPDATE stylists SET workdays = '{$new_workdays}' WHERE id = {$this->getId()};");
+            $this->setWorkdays($new_workdays);
+            }
         }
 
         static function getAllStylists()
