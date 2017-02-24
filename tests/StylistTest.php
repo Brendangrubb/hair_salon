@@ -85,11 +85,11 @@
 
             $new_stylist->saveStylist();
 
-            $get_all_array = array();
+            $get_all = array();
             $result = array();
             array_push($result, $new_stylist);
-            $get_all_array = Stylist::getAllStylists();
-            $this->assertEquals($get_all_array, $result);
+            $get_all = Stylist::getAllStylists();
+            $this->assertEquals($get_all, $result);
         }
 
         function test_getAllStylists()
