@@ -29,6 +29,7 @@
 
             $result = $new_stylist->getId();
 
+
             $this->assertEquals(1, $result);
         }
 
