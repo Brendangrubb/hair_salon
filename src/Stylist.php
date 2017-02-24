@@ -13,7 +13,7 @@
             $this->phone_number = $phone_number;
             $this->workdays = $workdays;
         }
-
+    //GETTERS AND SETTERS
         function getId()
         {
             return $this->id;
@@ -50,9 +50,17 @@
         {
             return $this->workdays;
         }
+    //CRUD METHODS
+        function saveStylist()
+        {
 
 
+        }
 
+        function getAllStylists()
+        {
+
+        }
 
 
 
