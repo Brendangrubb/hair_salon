@@ -50,9 +50,15 @@
         {
             return $this->stylist_id;
         }
+    //CRUD METHODS
+        function saveClient()
+        {
+
+        }
 
 
-        
+
+
 
     }
 ?>

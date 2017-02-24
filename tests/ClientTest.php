@@ -71,5 +71,22 @@
             $this->assertEquals(1, $result);
         }
 
+        function test_saveClient()
+        {
+            $id = 1;
+            $name = 'Vince Neil';
+            $phone_number = '2125436789';
+            $stylist_id= 1;
+            $new_client = new Stylist($id, $name, $phone_number, $stylist_id);
+
+            $new_client->saveClient();
+
+            $get_all = array();
+            $result = array();
+            array_push($result, $new_client);
+            $get_all_array = Client::getAllClients();
+            $this->assertEquals($get_all, $result);
+        }
+
     }
 ?>
