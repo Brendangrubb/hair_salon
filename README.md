@@ -32,12 +32,18 @@ The user will be able to add, list, edit and delete entries for stylists. The us
 
 &nbsp;
 ## MySQL commands
-*
-*
-*
-*
-*
-*
+* SHOW DATABASES;
+* DROP (_various old databases_);
+* CREATE DATABASE hair_salon;
+* USE hair_salon;
+* CREATE TABLE stylists (id serial PRIMARY KEY, name VARCHAR(50), phone_number VARCHAR(10), workdays VARCHAR(100));
+* DESCRIBE stylists; (_to confirm stylists table was created correctly_)
+* CREATE TABLE clients (id serial PRIMARY KEY, name VARCHAR(50), phone_number VARCHAR(10), stylist_id bigint(20));
+* DESCRIBE clients; (_to confirm clients table was created correctly_)
+* SHOW TABLES; (_to confirm tables exist where expected_)
+* hair_salon_test created at http://localhost:8888/phpmyadmin;
+* USE hair_salon_test;
+* SELECT DATABASE(); (_to confirm I'm testing on the correct database_)
 
 &nbsp;
 ## Setup/Installation Requirements

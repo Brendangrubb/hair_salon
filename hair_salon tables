@@ -1,0 +1,21 @@
+TABLES FOR REFERENCE
+ 
+STYLISTS
++--------------+---------------------+------+-----+---------+----------------+
+| Field        | Type                | Null | Key | Default | Extra          |
++--------------+---------------------+------+-----+---------+----------------+
+| id           | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(50)         | YES  |     | NULL    |                |
+| phone_number | varchar(10)         | YES  |     | NULL    |                |
+| workdays     | varchar(100)        | YES  |     | NULL    |                |
++--------------+---------------------+------+-----+---------+----------------+
+
+CLIENTS
++--------------+---------------------+------+-----+---------+----------------+
+| Field        | Type                | Null | Key | Default | Extra          |
++--------------+---------------------+------+-----+---------+----------------+
+| id           | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(50)         | YES  |     | NULL    |                |
+| phone_number | varchar(10)         | YES  |     | NULL    |                |
+| stylist_id   | bigint(20)          | YES  |     | NULL    |                |
++--------------+---------------------+------+-----+---------+----------------+
