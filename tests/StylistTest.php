@@ -15,7 +15,13 @@
 
     class StylistTest extends PHPUnit_Framework_TestCase
     {
+
+        function tearDown()
+        {
+            Stylist::deleteAllStylists();
+        }
     // GETTERS AND SETTERS TESTS
+
         function test_getId()
         {
             $id = 1;
