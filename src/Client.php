@@ -53,7 +53,31 @@
     //CRUD METHODS
         function saveClient()
         {
+            $GLOBALS['DB']->exec("INSERT INTO clients (name, phone_number, stylist_id) VALUES ('{$this->getName()}', '{$this->getPhoneNumber()}', '{$this->getStylistId()}');");
+            $this->id = $GLOBALS['DB']->lastInsertID();
+        }
 
+        static function getAllClients()
+        {
+            $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients;");
+            $all_clients = array();
+
+            foreach ($returned_clients as $client) {
+                $id = $client['id'];
+                $name = $client['name'];
+                $phone_number = $client['phone_number'];
+                $stylist_id = $client['stylist_id'];
+                $new_client = new Client($id, $name, $phone_number, $stylist_id);
+
+                array_push($all_clients, $new_client);
+            }
+
+            return $all_clients;
+        }
+
+        static function deleteAllClients()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM clients;");
         }
 
 
