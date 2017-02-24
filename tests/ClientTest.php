@@ -28,7 +28,7 @@
             $id = null;
             $name = 'Jacques St Gerrard';
             $phone_number = '5559991234';
-            $workdays= 'Monday, Saturday';
+            $workdays = 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
             $new_stylist->saveStylist();
 
@@ -36,7 +36,7 @@
             $id = 1;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id= $new_stylist->getId();
+            $stylist_id = $new_stylist->getId();
             $new_client = new Stylist($id, $name, $phone_number, $stylist_id);
 
             $result = $new_client->getId();
@@ -49,14 +49,14 @@
             $id = null;
             $name = 'Jacques St Gerrard';
             $phone_number = '5559991234';
-            $workdays= 'Monday, Saturday';
+            $workdays = 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
             $new_stylist->saveStylist();
 
             $id = 1;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id= $new_stylist->getId();
+            $stylist_id = $new_stylist->getId();
             $new_client = new Stylist($id, $name, $phone_number, $stylist_id);
 
             $result = $new_client->getName();
@@ -69,14 +69,14 @@
             $id = null;
             $name = 'Jacques St Gerrard';
             $phone_number = '5559991234';
-            $workdays= 'Monday, Saturday';
+            $workdays = 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
             $new_stylist->saveStylist();
 
             $id = 1;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id= $new_stylist->getId();
+            $stylist_id = $new_stylist->getId();
             $new_client = new Stylist($id, $name, $phone_number, $stylist_id);
 
             $result = $new_client->getPhoneNumber();
@@ -89,14 +89,14 @@
             $id = null;
             $name = 'Jacques St Gerrard';
             $phone_number = '5559991234';
-            $workdays= 'Monday, Saturday';
+            $workdays = 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
             $new_stylist->saveStylist();
 
             $id = 1;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id= $new_stylist->getId();
+            $stylist_id = $new_stylist->getId();
             $new_client = new Client($id, $name, $phone_number, $stylist_id);
 
             $result = $new_client->getStylistId();
@@ -106,10 +106,17 @@
     //CRUD METHODS
         function test_saveClient()
         {
+            $id = null;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '5559991234';
+            $workdays = 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+            $new_stylist->saveStylist();
+
             $id = 1;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id= 1;
+            $stylist_id = $new_stylist->getId();
             $new_client = new Client($id, $name, $phone_number, $stylist_id);
 
             $new_client->saveClient();
@@ -123,19 +130,26 @@
 
         function test_getAllClients()
         {
+            $id = null;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '5559991234';
+            $workdays = 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+            $new_stylist->saveStylist();
+
             $result = array();
 
             $id = null;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id= 1;
+            $stylist_id = $new_stylist->getId();
             $new_client = new Client($id, $name, $phone_number, $stylist_id);
             $new_client->saveClient();
 
             $id2 = null;
             $name2 = 'Crispin Glover';
             $phone_number2 = '9876345212';
-            $stylist_id2 = 1;
+            $stylist_id = $new_stylist->getId();
             $new_client2 = new Client($id, $name, $phone_number, $stylist_id);
             $new_client2->saveClient();
 
@@ -148,16 +162,23 @@
         function test_deleteAllClients()
         {
             $id = null;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '5559991234';
+            $workdays= 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+            $new_stylist->saveStylist();
+
+            $id = null;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id= 1;
+            $stylist_id = $new_stylist->getId();
             $new_client = new Client($id, $name, $phone_number, $stylist_id);
             $new_client->saveClient();
 
             $id2 = null;
             $name2 = 'Crispin Glover';
             $phone_number2 = '9876345212';
-            $stylist_id2 = 1;
+            $stylist_id2= $new_stylist->getId();
             $new_client2 = new Client($id, $name, $phone_number, $stylist_id);
             $new_client2->saveClient();
 
@@ -170,16 +191,23 @@
         function test_findClient()
         {
             $id = null;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '5559991234';
+            $workdays = 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+            $new_stylist->saveStylist();
+
+            $id = null;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id= 1;
+            $stylist_id = $new_stylist->getId();
             $new_client = new Client($id, $name, $phone_number, $stylist_id);
             $new_client->saveClient();
 
             $id2 = null;
             $name2 = 'Crispin Glover';
             $phone_number2 = '9876345212';
-            $stylist_id2 = 1;
+            $stylist_id2 = $new_stylist->getId();
             $new_client2 = new Client($id, $name, $phone_number, $stylist_id);
             $new_client2->saveClient();
 
@@ -191,9 +219,16 @@
         function test_updateClient()
         {
             $id = null;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '5559991234';
+            $workdays = 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+            $new_stylist->saveStylist();
+
+            $id = null;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id2 = 1;
+            $stylist_id = $new_stylist->getId();
             $new_client = new Client($id, $name, $phone_number, $stylist_id);
             $new_client->saveClient();
 
@@ -207,16 +242,23 @@
         function test_deleteClient()
         {
             $id = null;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '5559991234';
+            $workdays = 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+            $new_stylist->saveStylist();
+
+            $id = null;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $stylist_id= 1;
+            $stylist_id = $new_stylist->getId();
             $new_client = new Client($id, $name, $phone_number, $stylist_id);
             $new_client->saveClient();
 
             $id2 = null;
             $name2 = 'Crispin Glover';
             $phone_number2 = '9876345212';
-            $stylist_id2 = 1;
+            $stylist_id = $new_stylist->getId();
             $new_client2 = new Client($id, $name, $phone_number, $stylist_id);
             $new_client2->saveClient();
 
