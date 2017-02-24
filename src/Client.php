@@ -65,6 +65,11 @@
             }
         }
 
+        function deleteClient()
+        {
+            
+        }
+
         static function getAllClients()
         {
             $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients;");
