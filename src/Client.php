@@ -69,6 +69,7 @@
                 $stylist_id = $client['stylist_id'];
                 $new_client = new Client($id, $name, $phone_number, $stylist_id);
 
+
                 array_push($all_clients, $new_client);
             }
 
