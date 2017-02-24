@@ -53,21 +53,32 @@
     //CRUD METHODS
         function saveStylist()
         {
-
-
+        $GLOBALS['DB']->exec("INSERT INTO stylists (name, phone_number, workdays) VALUES ('{$this->getName()}', '{$this->getPhoneNumber()}', '{$this->getWorkdays()}');");
+        $this->id = $GLOBALS['DB']->lastInsertID();
         }
 
-        function getAllStylists()
+        static function getAllStylists()
         {
+            $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylists;");
+            $all_stylists = array();
+
+            foreach ($returned_stylists as $stylist) {
+                $id = $stylist['id'];
+                $name = $stylist['name'];
+                $phone_number = $stylist['phone_number'];
+                $workdays= $stylist['workdays'];
+                $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+
+                array_push($all_stylists, $new_stylist);
+            }
+
+            return $all_stylists;
+            }
 
         }
 
 
 
 
-
-
-
-    }
 
 ?>

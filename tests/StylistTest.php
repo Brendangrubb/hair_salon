@@ -20,7 +20,7 @@
         {
             $id = 1;
             $name = 'Jacques St Gerrard';
-            $phone_number = '555-999-1234';
+            $phone_number = '5559991234';
             $$workdays= 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
 
@@ -34,7 +34,7 @@
         {
             $id = 1;
             $name = 'Jacques St Gerrard';
-            $phone_number = '555-999-1234';
+            $phone_number = '5559991234';
             $$workdays= 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
 
@@ -47,7 +47,7 @@
         {
             $id = 1;
             $name = 'Jacques St Gerrard';
-            $phone_number = '555-999-1234';
+            $phone_number = '5559991234';
             $$workdays= 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
 
@@ -60,7 +60,7 @@
         {
             $id = 1;
             $name = 'Jacques St Gerrard';
-            $phone_number = '555-999-1234';
+            $phone_number = '5559991234';
             $workdays= 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
 
@@ -73,18 +73,18 @@
         {
             $id = null;
             $name = 'Jacques St Gerrard';
-            $phone_number = '555-999-1234';
+            $phone_number = '5559991234';
             $workdays= 'Monday, Saturday';
             $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
 
             $new_stylist->saveStylist();
 
-            $result_array = array();
-            array_push($result_array, $test_stylist);
+            $get_all_array = array();
+            $result = array();
+            array_push($result, $new_stylist);
             $get_all_array = Stylist::getAllStylists();
-            $this->assertEquals($get_all_array, $result_array);
+            $this->assertEquals($get_all_array, $result);
         }
-
 
 
 
