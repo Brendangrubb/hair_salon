@@ -58,5 +58,18 @@
             $this->assertEquals('2125436789', $result);
         }
 
+        function test_getStylistId()
+        {
+            $id = 1;
+            $name = 'Vince Neil';
+            $phone_number = '2125436789';
+            $stylist_id= 1;
+            $new_client = new Stylist($id, $name, $phone_number, $stylist_id);
+
+            $result = $new_client->getStylistId();
+
+            $this->assertEquals(1, $result);
+        }
+
     }
 ?>
