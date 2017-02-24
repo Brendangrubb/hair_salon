@@ -29,6 +29,18 @@
         }
 
 
+        function test_getName()
+        {
+            $id = 1;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '555-999-1234';
+            $$workdays= 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+
+            $result = $new_stylist->getName();
+
+            $this->assertEquals('Jacques St Gerrard', $result);
+        }
 
 
 
