@@ -73,12 +73,14 @@
             }
 
             return $all_stylists;
-            }
+        }
+
+        static function deleteAllStylists()
+        {
 
         }
 
 
 
-
-
+    }
 ?>
