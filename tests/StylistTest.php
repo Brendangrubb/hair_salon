@@ -76,7 +76,7 @@
 
             $this->assertEquals('Monday, Saturday', $result);
         }
-    //CRUD METHODS
+    // //CRUD METHODS
         function test_saveStylist()
         {
             $id = null;
@@ -257,13 +257,15 @@
             $id = null;
             $name = 'Vince Neil';
             $phone_number = '2125436789';
-            $new_client = new Client($id, $name, $phone_number, $new_stylist_id);
+            $stylist_id = $new_stylist_id;
+            $new_client = new Client($id, $name, $phone_number, $stylist_id);
             $new_client->saveClient();
-
+            // var_dump($new_client->getStylistId());
             $id2 = null;
             $name2 = 'Crispin Glover';
             $phone_number2 = '9876345212';
-            $new_client2 = new Client($id, $name, $phone_number, $new_stylist_id2);
+            $stylist_id2 = $new_stylist_id2;
+            $new_client2 = new Client($id, $name, $phone_number, $stylist_id2);
             $new_client2->saveClient();
 
             $result = $new_stylist->getClients();
