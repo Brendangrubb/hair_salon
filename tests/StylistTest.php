@@ -55,6 +55,19 @@
             $this->assertEquals('555-999-1234', $result);
         }
 
+        function test_getWorkdays()
+        {
+            $id = 1;
+            $name = 'Jacques St Gerrard';
+            $phone_number = '555-999-1234';
+            $$workdays= 'Monday, Saturday';
+            $new_stylist = new Stylist($id, $name, $phone_number, $workdays);
+
+            $result = $new_stylist->getWorkdays();
+
+            $this->assertEquals('Monday, Saturday', $result);
+        }
+
 
 
 

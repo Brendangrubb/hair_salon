@@ -43,6 +43,16 @@
 
         }
 
+        function setWorkdays($new_workdays)
+        {
+
+        }
+
+        function getWorkdays()
+        {
+
+        }
+
 
 
 
