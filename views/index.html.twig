@@ -21,7 +21,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="stylist_phone_number">Phone Number</label><br>
-                                <input class="form-control" id="stylist_phone_number" type="text" name="stylist_phone_number">
+                                <input class="form-control" id="stylist_phone_number" type="text" name="stylist_phone_number" placeholder="example - 5552347658">
                             </div>
                             <div class="form-group">
                                 <label for="workdays">Days They Can Work</label><br>
@@ -45,7 +45,11 @@
                         {% for stylist in stylists %}
                         <h4><strong><em><a href="/stylist/{{stylist.getId}}">{{ stylist.getName }}&nbsp;&nbsp;</a></em></strong>({{ stylist.getPhoneNumber }})</h4>
                         <h5>available {{ stylist.getWorkdays }}</h5>
-                        <h5><a href="/stylist/{{ stylist.getId }}/edit">Edit this listing</a></h5>
+                        <h5><a href="/stylist/{{ stylist.getId }}/edit">Edit Stylist Info</a></h5>
+                        <form action="/stylist/{{ stylist.getId }}" method="post">
+                            <input name="_method" type="hidden" value="delete">
+                            <button class="btn btn-sm"type="submit">Delete Stylist</button>
+                        </form>
                         {% endfor %}
                         {% else %}
                         <br>

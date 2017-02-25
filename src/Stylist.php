@@ -72,6 +72,8 @@
         function deleteStylist()
         {
             $GLOBALS['DB']->exec("DELETE FROM stylists WHERE id = {$this->getId()};");
+            $GLOBALS['DB']->exec("DELETE FROM clients WHERE category_id = {$this->getId()};");
+
         }
 
         function getClients()

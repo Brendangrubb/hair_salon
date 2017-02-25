@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="phone_number">Client Phone Number</label><br>
-                                <input class="form-control" id="phone_number" type="text" name="phone_number" required>
+                                <input class="form-control" id="phone_number" type="text" name="phone_number" placeholder="example - 5552347658">
                             </div>
                             <div id="add_client_button">
                                 <button class="btn btn-info" type="submit">Add a Client!</button>
@@ -47,12 +47,15 @@
                         <h4>avaialable {{ stylist.getWorkdays }}</h4>
                         -
                         {% if clients is not empty %}
-                        <h4>Current Clients:</h4>
+                        <h5>Current Clients:</h5>
                         {% for client in clients %}
                         <h4>{{ client.getName }}</h4>
                         <h5>{{ client.getPhoneNumber }}</h5>
                         <h5><a href="/client/{{ client.getId }}/edit">Edit this listing</a></h5>
-
+                        <form action="/client/{{ client.getId }}" method="post">
+                            <input name="_method" type="hidden" value="delete">
+                            <button class="btn btn-sm"type="submit">Delete Client</button>
+                        </form>
                         <br>
                         {% endfor %}
                         {% else %}
