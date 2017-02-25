@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clients</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>{{ stylist.getName }}</h1>
+
+
+            {% if clients is not empty %}
+            <ul>
+                {% for client in clients %}
+                <li>{{ client.getName }}</li>
+                <li>{{ client.getPhoneNumber }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+                    <form id="client_form" action="/clients" method="post">
+                        <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId() }}">
+                        <div class="form-group">
+                            <label for="name">Client Name</label><br>
+                            <input class="form-control" id="name" type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone_number">Client Phone Number</label><br>
+                            <input class="form-control" id="phone_number" type="text" name="phone_number" required>
+                        </div>
+                        <button class="btn btn-info" type="submit">Add Client!</button>
+                    </form>
+                    <br>
+                    <form action="/delete_clients" method="post">
+                        <button class="btn" type="submit">Delete All Clients</button>
+                    </form>
+                    <br>
+
+                    <h5><a href="/">Add</a> another Stylist!</h5>
+
+        </div>
+
+    </body>
+</html>

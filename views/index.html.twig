@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="{{app.request.getbaseurl}}/assets/css/styles.css">
-        <title></title>
+        <title>Stylists</title>
     </head>
     <body>
         <div class="container">
-            <header>
-                <h1>Hair Salon Manager</h1>
-            </header>
 
-            <div id="add_stylists" class="well">
-                <form action="/client_display" method="post">
-                    <h3>Enter a New Stylist!</h3>
+
+            <p>Add a new Stylist:</p>
+
+
+                <form action="/stylists" method="post">
                     <div class="form-group">
-                        <label for="stylist_name">Stylist Name</label>
-                        <input class="form-control" id="stylist_name" type="text" name="stylist_name" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="stylist_phone_number">Phone Number</label>
-                        <input class="form-control" id="stylist_phone_number" type="text" name="stylist_phone_number" value="">
+                        <label for="stylist_name">Add a Stylist</label><br>
+                        <input class="form-control" id="stylist_name" type="text" name="stylist_name" required>
                     </div>
                     <div class="form-group">
-                        <label for="stylist_workdays">Days They Work</label>
-                        <input class="form-control" id="stylist_workdays" type="text" name="stylist_workdays" value="">
+                        <label for="stylist_phone_number">Phone Number</label><br>
+                        <input class="form-control" id="stylist_phone_number" type="text" name="stylist_phone_number">
                     </div>
-                    <div class="button">
-                        <button class="btn" type="submit">Add a Stylist!</button>
+                    <div class="form-group">
+                        <label for="workdays">Workdays</label><br>
+                        <input class="form-control" id="workdays" type="text" name="workdays">
                     </div>
+                    <button class="btn" type="submit">Add Stylist!</button>
                 </form>
-            </div>
 
-            <div id="list_of_stylists">
-                <h3>list of stylists:</h3>
-                <h4><strong>future name</strong> (future number // future workdays)</h4>
-                <h4><strong>future name2</strong> (future number // future workdays)</h4>
-                <h4><strong>future name3</strong> (future number // future workdays)</h4>
-            </div>
+                {% if stylists is not empty %}
+                    <p>Here are your Stylists:</p>
+                    <ul>
+                        {% for stylist in stylists %}
+                        <li><a href="/stylist/{{stylist.getId}}">{{ stylist.getName }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <br>
+                    <p>Add some stylists, dummy!</p>
+                {% endif %}
 
+                <br>
+                <form action="/delete_stylists" method="post">
+                    <button class="btn" type="submit">Delete All Stylists</button>
+                </form>
+                <br>
         </div>
+
     </body>
 </html>
