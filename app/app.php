@@ -17,5 +17,10 @@
         return $app['twig']->render('index.html.twig');
     });
 
+    $app->post('/client_display', function() use ($app) {
+
+        return $app['twig']->render('client_display.html.twig');
+    });
+
     return $app;
 ?>

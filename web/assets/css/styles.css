@@ -1,0 +1,41 @@
+body {
+    background-color: #fcf3ea;
+    font-family: 'Cabin', sans-serif;
+}
+
+button {
+    float: right;
+    background-color: #efbb8f;
+}
+
+header {
+    background-color: #fefaf6;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#add_stylists {
+    padding-bottom: 50px;
+}
+
+.back_link {
+    float: right;
+}
+
+#list_of_stylists {
+        text-align: center;
+}
+
+#list_of_stylists li{
+    list-style: none;
+}
+
+#stylist_client_list {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.well {
+    background-color: #fefaf6;
+}
