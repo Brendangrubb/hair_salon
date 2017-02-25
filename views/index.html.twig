@@ -43,7 +43,8 @@
                         {% if stylists is not empty %}
                         <h3>List of Stylists:</h3>
                         {% for stylist in stylists %}
-                        <h4><strong><em><a href="/stylist/{{stylist.getId}}">{{ stylist.getName }} </a></em></strong>({{ stylist.getPhoneNumber }} // {{ stylist.getWorkdays }})</h4>
+                        <h4><strong><em><a href="/stylist/{{stylist.getId}}">{{ stylist.getName }}&nbsp;&nbsp;</a></em></strong>({{ stylist.getPhoneNumber }})</h4>
+                        <h5>available {{ stylist.getWorkdays }}</h5>
                         {% endfor %}
                         {% else %}
                         <br>

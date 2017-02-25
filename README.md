@@ -12,21 +12,20 @@ The user will be able to add, list, edit and delete entries for stylists. The us
 ### Stylist Functionality
 |Behavior|Input|Output|
 |--------|-----|------|
-| Program will add a new stylist to the database | "Jacques St Gerrard / 5559991234 / (works on) Monday, Saturday" | same as input |
-| Program will list all stylists entered in the database | _no action necessary, stylists listed on home page_ | "Current stylists: Jacques St Gerrard / 5559991234 / (works on) Monday, Saturday /// Cristiano Francois 5038765309 / (works on) Thursday, Friday" |
-| Program will delete all stylists entered in the database | _user clicks_ "Delete All Stylists" _button_ | "You currently have no stylists in your database" |
-| Program will find a specific stylist from the database | _user clicks_ "Jacques St Gerrard" | "Stylist: Jacques St Gerrard / 5559991234 / (works on) Monday, Saturday" |
+| Program will add a new stylist to the database | "Jacques St Gerrard (5559991234) / available Monday, Saturday" | same as input |
+| Program will list all stylists entered in the database | _no action necessary, stylists listed on home page_ | "List of stylists: Jacques St Gerrard (5559991234) / available Monday, Saturday" /// Cristiano Francois (5038765309) / available Thursday, Friday" |
+| Program will delete all stylists entered in the database | _user clicks_ "Delete All Stylists" _button_ | "Add Some Stylists!" |
+| Program will find a specific stylist from the database | _user clicks_ "Jacques St Gerrard" | "Jacques St Gerrard / 5559991234 / available Monday, Saturday - Add Clients" |
 | Program will edit entry of specific stylist from the database | _user inputs new phone number_ "4321999555" | "Stylist: Jacques St Gerrard / 4321999555 / (works on) Monday, Saturday |
 | Program will delete entry of specific stylist from the database | _user clicks delete stylist_ | "Stylist has been deleted" |
-| Program will find list of clients assigned to a single Stylist | "Jacques St Gerrard" | "Vince Neil" |
+| Program will find list of clients assigned to a single Stylist | Jacques St Gerrard / 5559991234 / available Monday, Saturday - Current Clients: Vince Neil / 2125436789 |
+
 
 ### Client Functionality
 |Behavior|Input|Output|
 |--------|-----|------|
-| Program will add a new client to the database | "Vince Neil / 2125436789 | same as input |
-| Program will list all clients associated with a stylist | _user clicks_ "Jacques St Gerrard" | "Stylist: Jacques St Gerrard / 4321999555 / (works on) Monday, Saturday / Current Clients: Vince Neil (2125436789) /// Crispin Glover (9876345212)" |
-| Program will delete all clients associated with a stylist | _user clicks_ "Delete All Clients" _button_ | "You currently have no clients associated with this stylist in your database" |
-| Program will find a specific client from the database | _user clicks_ "Vince Neil" | "Vince Neil (2125436789)" |
+| Program will add a new client to the database | _On Jacques's Stylist Page_ "Vince Neil / 2125436789" | Jacques St Gerrard / 5559991234 / available Monday, Saturday - Current Clients: Vince Neil / 2125436789 |
+| Program will delete all clients | _user clicks_ "Delete All Clients" _button_ | _Back to Main Page_ |
 | Program will edit entry of specific client from the database | _user inputs new phone number_ "3215439876" | "Vince Neil (3215439876)"|
 | Program will delete entry of specific client from the database | _user clicks delete client_ | "Client has been deleted" |
 

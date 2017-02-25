@@ -44,7 +44,7 @@
                     <div id="stylist_client_list"class="well">
                         <h3><strong><em>{{ stylist.getName }}</em></strong></h3>
                         <h5>{{ stylist.getPhoneNumber }}</h5>
-                        <h4>{{ stylist.getWorkdays }}</h4>
+                        <h4>avaialable {{ stylist.getWorkdays }}</h4>
                         -
                         {% if clients is not empty %}
                         <h4>Current Clients:</h4>
@@ -53,6 +53,8 @@
                         <h5>{{ client.getPhoneNumber }}</h5>
                         <br>
                         {% endfor %}
+                        {% else %}
+                        <h4>Add Clients</h4>
                         {% endif %}
                     </div>
                 </div>
