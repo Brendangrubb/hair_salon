@@ -51,6 +51,8 @@
                         {% for client in clients %}
                         <h4>{{ client.getName }}</h4>
                         <h5>{{ client.getPhoneNumber }}</h5>
+                        <h5><a href="/client/{{ client.getId }}/edit">Edit this listing</a></h5>
+
                         <br>
                         {% endfor %}
                         {% else %}

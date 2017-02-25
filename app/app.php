@@ -7,6 +7,7 @@
     use Symfony\Component\Debug\Debug;
     Debug::enable();
 
+
     $app = new Silex\Application();
     $app['debug'] = true;
 
@@ -17,6 +18,8 @@
 
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path'=>__DIR__.'/../views'));
 
+        use Symfony\Component\HttpFoundation\Request;
+        Request::enableHttpMethodParameterOverride();
 
         $app->get('/', function() use ($app) {
             return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAllStylists()));
@@ -62,6 +65,33 @@
 
             return $app['twig']->render('stylists.html.twig', array('stylist' => $stylist, 'clients' => $clients));
         });
+
+        $app->get("/stylist/{id}/edit", function($id) use ($app) {
+            $stylist = Stylist::findStylist($id);
+            return $app['twig']->render('stylist_edit.html.twig', array('stylist' => $stylist));
+        });
+
+
+        $app->patch("/stylist/{id}", function($id) use ($app) {
+            $new_phone_number = $_POST['stylist_phone_number'];
+            $workdays = $_POST['workdays'];
+            $stylist = Stylist::findStylist($id);
+            $stylist->updateStylist($new_phone_number, $workdays);
+            return $app['twig']->render('edit_complete.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
+        });
+
+        $app->get("/client/{id}/edit", function($id) use ($app) {
+            $client = Client::findClient($id);
+            return $app['twig']->render('client_edit.html.twig', array('client' => $client));
+        });
+
+        $app->patch("/client/{id}", function($id) use ($app) {
+            $new_phone_number = $_POST['phone_number'];
+            $client = Client::findClient($id);
+            $client->updateClient($new_phone_number);
+            return $app['twig']->render('edit_complete.html.twig', array('client' => $client, 'clients' => $client->getAllClients()));
+        });
+
 
 
     return $app;

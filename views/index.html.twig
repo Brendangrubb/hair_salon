@@ -45,6 +45,7 @@
                         {% for stylist in stylists %}
                         <h4><strong><em><a href="/stylist/{{stylist.getId}}">{{ stylist.getName }}&nbsp;&nbsp;</a></em></strong>({{ stylist.getPhoneNumber }})</h4>
                         <h5>available {{ stylist.getWorkdays }}</h5>
+                        <h5><a href="/stylist/{{ stylist.getId }}/edit">Edit this listing</a></h5>
                         {% endfor %}
                         {% else %}
                         <br>
