@@ -4,7 +4,6 @@ body {
 }
 
 button {
-    float: right;
     background-color: #efbb8f;
 }
 
@@ -24,6 +23,13 @@ header {
 }
 
 .back_link {
+}
+
+#delete_all_clients {
+    float: right;
+}
+
+#delete_all_stylists {
     float: right;
 }
 
@@ -36,7 +42,6 @@ header {
 }
 
 #stylist_client_list {
-    margin-top: 50px;
     text-align: center;
 }
 

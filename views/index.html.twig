@@ -10,45 +10,53 @@
             <header>
                 <h1>Hair Salon Manager</h1>
             </header>
-
-            <div id="add_stylists" class="well">
-                <form action="/stylists" method="post">
-                    <h3>Enter a New Stylist!</h3>
-                    <div class="form-group">
-                        <label for="stylist_name">Stylist Name</label><br>
-                        <input class="form-control" id="stylist_name" type="text" name="stylist_name" required>
+            <div class="row">
+                <div class="col-md-7">
+                    <div id="add_stylists" class="well">
+                        <form action="/stylists" method="post">
+                            <h3>Enter a New Stylist!</h3>
+                            <div class="form-group">
+                                <label for="stylist_name">Stylist Name</label><br>
+                                <input class="form-control" id="stylist_name" type="text" name="stylist_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stylist_phone_number">Phone Number</label><br>
+                                <input class="form-control" id="stylist_phone_number" type="text" name="stylist_phone_number">
+                            </div>
+                            <div class="form-group">
+                                <label for="workdays">Days They Can Work</label><br>
+                                <input class="form-control" id="workdays" type="text" name="workdays">
+                            </div>
+                            <div id="add_stylist_button" class="button">
+                                <button class="btn" type="submit">Add a Stylist!</button>
+                            </div>
+                        </form>
+                        <div id="delete_all_stylists">
+                            <form action="/delete_stylists" method="post">
+                                <button class="btn" type="submit">Delete All Stylists</button>
+                            </form>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="stylist_phone_number">Phone Number</label><br>
-                        <input class="form-control" id="stylist_phone_number" type="text" name="stylist_phone_number">
-                    </div>
-                    <div class="form-group">
-                        <label for="workdays">Days They Can Work</label><br>
-                        <input class="form-control" id="workdays" type="text" name="workdays">
-                    </div>
-                    <div class="button">
-                        <button class="btn" type="submit">Add a Stylist!</button>
-                    </div>
-                </form>
-            </div>
-
-            <div id="list_of_stylists">
-                {% if stylists is not empty %}
-                    <p>List of Stylists:</p>
+                </div>
+                <div class="col-md-5">
+                    <div id="list_of_stylists">
+                        {% if stylists is not empty %}
+                        <h3>List of Stylists:</h3>
                         {% for stylist in stylists %}
-                        <h4><strong><a href="/stylist/{{stylist.getId}}">{{ stylist.getName }}</a></strong>({{ stylist.getPhoneNumber }} // {{ stylist.getWorkdays }})</h4>
-                    {% endfor %}
-                {% else %}
-                    <br>
-                    <p>Add Some Stylists!</p>
-                {% endif %}
-
-                <br>
-                <form action="/delete_stylists" method="post">
-                    <button class="btn" type="submit">Delete All Stylists</button>
-                </form>
-                <br>
+                        <h4><strong><em><a href="/stylist/{{stylist.getId}}">{{ stylist.getName }} </a></em></strong>({{ stylist.getPhoneNumber }} // {{ stylist.getWorkdays }})</h4>
+                        {% endfor %}
+                        {% else %}
+                        <br>
+                        <h3>Add Some Stylists!</h3>
+                        {% endif %}
+                        <br>
+                    </div>
+                </div>
             </div>
+
+
+
+
         </div>
 
     </body>

@@ -15,40 +15,49 @@
 
             <h4 class="back_link">Go back to <a href="/">Add a Stylist</a> Page</h4>
 
-            <div id="stylist_client_list"class="well">
-                <h3>{{ stylist.getName }}</h3>
-                <h4>{{ stylist.getPhoneNumber }}</h4>
-                <h4>{{ stylist.getWorkdays }}</h4>
-                -
-                {% if clients is not empty %}
-                    {% for client in clients %}
-                    <h4>{{ client.getName }}</h4>
-                    <h5>{{ client.getPhoneNumber }}</h5>
-                    <br>
-                    {% endfor %}
-                {% endif %}
+            <div class="row">
+                <div class="col-md-7">
+                    <div id="add_clients" class="well">
+                        <form action="/clients" method="post">
+                            <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId() }}">
+                            <div class="form-group">
+                                <label for="name">Client Name</label><br>
+                                <input class="form-control" id="name" type="text" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone_number">Client Phone Number</label><br>
+                                <input class="form-control" id="phone_number" type="text" name="phone_number" required>
+                            </div>
+                            <div id="add_client_button">
+                                <button class="btn btn-info" type="submit">Add a Client!</button>
+                            </div>
+                        </form>
+                        <div id="delete_all_clients">
+                            <form action="/delete_clients" method="post">
+                                <button class="btn" type="submit">Delete All Clients</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div id="stylist_client_list"class="well">
+                        <h3><strong><em>{{ stylist.getName }}</em></strong></h3>
+                        <h5>{{ stylist.getPhoneNumber }}</h5>
+                        <h4>{{ stylist.getWorkdays }}</h4>
+                        -
+                        {% if clients is not empty %}
+                        <h4>Current Clients:</h4>
+                        {% for client in clients %}
+                        <h4>{{ client.getName }}</h4>
+                        <h5>{{ client.getPhoneNumber }}</h5>
+                        <br>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
             </div>
 
-            <div id="add_clients" class="well">
-                <form action="/clients" method="post">
-                    <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId() }}">
-                    <div class="form-group">
-                        <label for="name">Client Name</label><br>
-                        <input class="form-control" id="name" type="text" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone_number">Client Phone Number</label><br>
-                        <input class="form-control" id="phone_number" type="text" name="phone_number" required>
-                    </div>
-                    <button class="btn btn-info" type="submit">Add a Client!</button>
-                </form>
-            </div>
-            <div id="delete_all_clients">
-                <form action="/delete_clients" method="post">
-                    <button class="btn" type="submit">Delete All Clients</button>
-                </form>
-            <div>
-                
         </div>
     </body>
 </html>
